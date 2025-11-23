@@ -4,7 +4,7 @@ import { createUploadthing } from 'uploadthing/next';
 
 const f = createUploadthing();
 
-export const ourFileRouter = {
+export const ourFileRouter: FileRouter = {
   editorUploader: f(['image', 'text', 'blob', 'pdf', 'video', 'audio'])
     .middleware(() => {
       return {};
@@ -18,6 +18,6 @@ export const ourFileRouter = {
         url: file.ufsUrl,
       };
     }),
-} satisfies FileRouter;
+};
 
 export type OurFileRouter = typeof ourFileRouter;

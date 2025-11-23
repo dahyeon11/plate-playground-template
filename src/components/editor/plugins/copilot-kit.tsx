@@ -10,7 +10,7 @@ import { GhostText } from '@/components/ui/ghost-text';
 
 import { MarkdownKit } from './markdown-kit';
 
-export const CopilotKit = [
+export const CopilotKit: any = [
   ...MarkdownKit,
   CopilotPlugin.configure(({ api }) => ({
     options: {

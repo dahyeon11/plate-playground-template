@@ -104,7 +104,7 @@ export function useUploadFile({
   };
 }
 
-export const { uploadFiles, useUploadThing } =
+export const { uploadFiles, useUploadThing }: any =
   generateReactHelpers<OurFileRouter>();
 
 export function getErrorMessage(err: unknown) {

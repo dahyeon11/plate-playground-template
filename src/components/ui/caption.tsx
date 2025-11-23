@@ -59,7 +59,7 @@ export function CaptionTextarea(
   );
 }
 
-export const CaptionButton = createPrimitiveComponent(Button)({
+export const CaptionButton: any = createPrimitiveComponent(Button)({
   propsHook: useCaptionButton,
   stateHook: useCaptionButtonState,
 });

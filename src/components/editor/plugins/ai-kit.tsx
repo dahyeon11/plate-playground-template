@@ -92,7 +92,7 @@ export const aiChatPlugin = AIChatPlugin.extend({
   },
 });
 
-export const AIKit = [
+export const AIKit: any = [
   ...CursorOverlayKit,
   ...MarkdownKit,
   AIPlugin.withComponent(AILeaf),

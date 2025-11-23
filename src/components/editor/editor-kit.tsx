@@ -38,7 +38,7 @@ import { TableKit } from '@/components/editor/plugins/table-kit';
 import { TocKit } from '@/components/editor/plugins/toc-kit';
 import { ToggleKit } from '@/components/editor/plugins/toggle-kit';
 
-export const EditorKit = [
+export const EditorKit: any = [
   ...CopilotKit,
   ...AIKit,
 
@@ -92,4 +92,4 @@ export const EditorKit = [
 
 export type MyEditor = TPlateEditor<Value, (typeof EditorKit)[number]>;
 
-export const useEditor = () => useEditorRef<MyEditor>();
+export const useEditor = (): any => useEditorRef<MyEditor>();
