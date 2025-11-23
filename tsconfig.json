@@ -34,32 +34,19 @@
     "pretty": true,
     "preserveWatchOutput": true,
     "jsx": "react-jsx",
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     }
   },
   "include": [
-    "next-env.d.ts",
-    ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts",
+    "src",
     "**/*.ts",
     "**/*.tsx",
     "**/*.cts",
     "**/*.ctsx",
     "**/*.mts",
-    "**/*.mtsx",
-    "**/*.js",
-    "**/*.jsx",
-    "**/*.cjs",
-    "**/*.cjsx",
-    "**/*.mjs",
-    "**/*.mjsx"
+    "**/*.mtsx"
   ],
   "exclude": ["node_modules", "dist"]
 }

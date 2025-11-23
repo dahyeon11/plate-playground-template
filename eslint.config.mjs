@@ -1,27 +1,16 @@
-import { FlatCompat } from '@eslint/eslintrc';
 import unusedImports from 'eslint-plugin-unused-imports';
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
+import tseslint from 'typescript-eslint';
 
 const eslintConfig = [
   {
-    ignores: ['.next'],
+    ignores: ['dist', 'node_modules', '.vite'],
   },
-  ...compat.extends('next/core-web-vitals', 'next/typescript'),
+  ...tseslint.configs.recommended,
   {
     plugins: {
       'unused-imports': unusedImports,
     },
     rules: {
-      '@next/next/no-html-link-for-pages': 'off',
-      '@next/next/no-img-element': 'off',
       '@typescript-eslint/no-empty-object-type': 'off',
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-unused-expressions': 'off',

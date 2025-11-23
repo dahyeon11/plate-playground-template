@@ -2,14 +2,14 @@
   "name": "plate-playground-template",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "build": "next build",
+    "build": "tsc && vite build",
     "depset": "pnpm dlx depset@latest @udecode --yes",
-    "dev": "next dev",
+    "dev": "vite",
     "lint": "eslint",
     "lint:fix": "eslint --fix && prettier --write . --log-level warn",
-    "preview": "next build && next start",
-    "start": "next start",
+    "preview": "vite preview",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -72,7 +72,6 @@
     "lodash": "^4.17.21",
     "lowlight": "^3.3.0",
     "lucide-react": "^0.545.0",
-    "next": "16.0.0-beta.0",
     "pdf-lib": "^1.17.1",
     "platejs": "^49.2.21",
     "react": "19.2.0",
@@ -97,19 +96,20 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
     "@tailwindcss/postcss": "4.1.13",
-    "@types/node": "^24.5.2",
+    "@types/node": "^24.10.1",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
-    "babel-plugin-react-compiler": "^1.0.0",
+    "@vitejs/plugin-react": "^5.0.0",
     "eslint": "^9.36.0",
-    "eslint-config-next": "16.0.0-beta.0",
     "eslint-plugin-unused-imports": "^4.2.0",
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
     "prettier-plugin-packagejson": "^2.5.19",
     "prettier-plugin-tailwindcss": "^0.6.14",
     "tailwindcss": "4.1.13",
-    "typescript": "5.9.2"
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.46.4",
+    "vite": "^7.2.4"
   },
   "pnpm": {
     "peerDependencyRules": {
