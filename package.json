@@ -1,8 +1,30 @@
 {
-  "name": "plate-playground-template",
+  "name": "@dahyeon/plate-editor",
   "version": "0.1.0",
-  "private": true,
   "type": "module",
+  "description": "A rich-text editor library built with Plate, Slate, and React",
+  "keywords": ["plate", "editor", "rich-text", "react", "slate"],
+  "author": "dahyeon",
+  "license": "MIT",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./styles": "./dist/style.css"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "publishConfig": {
+    "registry": "https://git.dahyeon.us/api/packages/dahyeon/npm/",
+    "access": "public"
+  },
   "scripts": {
     "build": "tsc && vite build",
     "depset": "pnpm dlx depset@latest @udecode --yes",
@@ -10,7 +32,8 @@
     "lint": "eslint",
     "lint:fix": "eslint --fix && prettier --write . --log-level warn",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
     "@ai-sdk/gateway": "^1.0.40",
@@ -74,11 +97,9 @@
     "lucide-react": "^0.545.0",
     "pdf-lib": "^1.17.1",
     "platejs": "^49.2.21",
-    "react": "19.2.0",
     "react-day-picker": "^9.11.1",
     "react-dnd": "^16.0.1",
     "react-dnd-html5-backend": "^16.0.1",
-    "react-dom": "19.2.0",
     "react-lite-youtube-embed": "^2.5.6",
     "react-player": "3.3.1",
     "react-textarea-autosize": "^8.5.9",
@@ -93,6 +114,10 @@
     "use-file-picker": "2.1.2",
     "zod": "^4.1.12"
   },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
     "@tailwindcss/postcss": "4.1.13",
@@ -106,6 +131,8 @@
     "prettier": "^3.6.2",
     "prettier-plugin-packagejson": "^2.5.19",
     "prettier-plugin-tailwindcss": "^0.6.14",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
     "tailwindcss": "4.1.13",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",
